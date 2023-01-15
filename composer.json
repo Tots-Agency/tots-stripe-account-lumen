@@ -20,9 +20,24 @@
         "php": "^8.0",
         "laravel/lumen-framework": "^9.0",
         "stripe/stripe-php": "^10.3",
+        "tots/auth-lumen": "dev-main",
+        "tots/account-lumen": "dev-main",
+        "tots/elofilter-lumen": "dev-main",
         "tots/stripe-lumen": "dev-main"
     },
     "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/tots-agency/tots-auth-lumen.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/tots-agency/tots-account-lumen.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/tots-agency/tots-elofilter-lumen.git"
+        },
         {
             "type": "git",
             "url": "https://github.com/tots-agency/tots-stripe-lumen.git"
