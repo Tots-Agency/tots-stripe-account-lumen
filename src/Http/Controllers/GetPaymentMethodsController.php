@@ -4,6 +4,8 @@ namespace Tots\StripeAccount\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Tots\Account\Models\TotsAccount;
+use Tots\Auth\Models\TotsProvider;
+use Tots\Billing\Models\TotsAccountProvider;
 use Tots\Stripe\Services\TotsStripeService;
 
 class GetPaymentMethodsController extends \Laravel\Lumen\Routing\Controller
@@ -27,7 +29,14 @@ class GetPaymentMethodsController extends \Laravel\Lumen\Routing\Controller
     {
         /** @var \Tots\Account\Models\TotsAccount $account */
         $account = $request->input(TotsAccount::class);
+        /** @var TotsProvider $account */
+        $provider = $request->input(TotsProvider::class);
+        /** Search exist Customer created */
+        $providerAcc = TotsAccountProvider::where('account_id', $account->id)->where('provider_id', $provider->id)->first();
+        if($providerAcc === null){
+            throw new \Exception('Customer not found');
+        }
         /** Return payment methods */
-        return $this->service->getPaymentMethodsSaved($account->id);
+        return $this->service->getPaymentMethodsSaved($providerAcc->external_id);
     }
 }

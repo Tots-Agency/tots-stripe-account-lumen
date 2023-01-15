@@ -1,7 +1,7 @@
 {
     "name": "tots/stripe-account-lumen",
     "description": "The library for Lumen PHP",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -22,6 +22,7 @@
         "stripe/stripe-php": "^10.3",
         "tots/auth-lumen": "dev-main",
         "tots/account-lumen": "dev-main",
+        "tots/billing-lumen": "dev-main",
         "tots/elofilter-lumen": "dev-main",
         "tots/stripe-lumen": "dev-main"
     },
@@ -33,6 +34,10 @@
         {
             "type": "git",
             "url": "https://github.com/tots-agency/tots-account-lumen.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/tots-agency/tots-billing-lumen.git"
         },
         {
             "type": "git",
